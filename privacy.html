@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EngLabs Privacy Policy</title>
+  <meta
+    name="description"
+    content="EngLabs Privacy Policy. Learn what data is collected, why permissions are used, and how to control your data."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    :root {
+      --bg: #f6f8ff;
+      --surface: #ffffff;
+      --surface-2: #ebefff;
+      --ink: #1e2433;
+      --muted: #5d667f;
+      --primary: #255fd6;
+      --primary-2: #5d89ff;
+      --mint: #15aa75;
+      --line: #dbe1f3;
+      --shadow: 0 14px 40px rgba(23, 42, 86, 0.1);
+      --radius: 18px;
+      --max: 960px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Manrope", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 15% -10%, rgba(93, 137, 255, 0.16), transparent 34%),
+        radial-gradient(circle at 85% 8%, rgba(21, 170, 117, 0.12), transparent 30%),
+        var(--bg);
+      line-height: 1.66;
+    }
+
+    .wrap { width: min(var(--max), calc(100% - 32px)); margin: 0 auto; }
+    .en, .vi { display: none; }
+    body.lang-en .en, body.lang-vi .vi { display: block; }
+    body.lang-en .lang-en, body.lang-vi .lang-vi { color: #fff; background: var(--primary); }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(10px);
+      background: rgba(246, 248, 255, 0.84);
+      border-bottom: 1px solid rgba(219, 225, 243, 0.7);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 0;
+      gap: 16px;
+    }
+    .brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink); }
+    .brand img { width: 36px; height: 36px; border-radius: 10px; }
+    .brand b { font-size: 18px; letter-spacing: -0.2px; }
+
+    .nav-actions { display: inline-flex; align-items: center; gap: 8px; }
+    .lang-switch {
+      display: inline-flex;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--surface);
+      padding: 3px;
+      gap: 2px;
+    }
+    .lang-switch button {
+      border: 0;
+      background: transparent;
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 12px;
+      border-radius: 999px;
+      padding: 6px 10px;
+      cursor: pointer;
+    }
+
+    .btn {
+      text-decoration: none;
+      border-radius: 999px;
+      font-weight: 800;
+      letter-spacing: 0.1px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 0;
+      cursor: pointer;
+      white-space: nowrap;
+      padding: 11px 16px;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--primary-2));
+      color: #fff;
+      box-shadow: var(--shadow);
+    }
+    .btn-ghost {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      color: var(--ink);
+    }
+
+    main { padding: 42px 0 56px; }
+    .hero {
+      background: linear-gradient(150deg, #fff, #eef3ff);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: clamp(20px, 3.6vw, 34px);
+      box-shadow: var(--shadow);
+      margin-bottom: 16px;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border-radius: 999px;
+      padding: 7px 12px;
+      background: rgba(37, 95, 214, 0.08);
+      color: var(--primary);
+      font-weight: 800;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 10px;
+    }
+    h1 {
+      font-family: "Fraunces", serif;
+      font-size: clamp(34px, 5vw, 54px);
+      line-height: 1.08;
+      letter-spacing: -0.8px;
+      margin-bottom: 12px;
+    }
+    .hero p { color: var(--muted); font-size: 17px; max-width: 70ch; }
+    .meta { margin-top: 14px; color: #36466d; font-weight: 700; font-size: 13px; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .mini {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 13px;
+      font-size: 14px;
+      color: #2b395c;
+      font-weight: 600;
+    }
+
+    .section {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 20px;
+      margin-bottom: 12px;
+    }
+    .section h2 {
+      font-family: "Fraunces", serif;
+      font-size: 30px;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+      margin-bottom: 10px;
+    }
+    .section h3 { font-size: 16px; margin: 14px 0 6px; }
+    .section p { color: var(--muted); margin-bottom: 8px; }
+    .section p:last-child { margin-bottom: 0; }
+
+    ul { list-style: none; display: grid; gap: 8px; margin: 8px 0; }
+    li {
+      color: var(--muted);
+      padding-left: 16px;
+      position: relative;
+    }
+    li::before {
+      content: "•";
+      color: var(--primary);
+      font-weight: 900;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+    strong { color: #223258; }
+
+    .perm {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .perm-item {
+      background: var(--surface-2);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 12px;
+    }
+    .perm-item b {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 14px;
+    }
+    .perm-item p { margin: 0; font-size: 14px; }
+
+    .refs {
+      display: grid;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .refs a { color: var(--primary); font-weight: 700; text-decoration: none; }
+
+    .contact {
+      text-align: center;
+      background: linear-gradient(145deg, #20489f, #3f70e2);
+      color: #fff;
+      border-radius: 20px;
+      padding: 22px 18px;
+      box-shadow: var(--shadow);
+      margin-top: 14px;
+    }
+    .contact p { opacity: 0.94; margin-bottom: 10px; }
+    .contact a {
+      color: #fff;
+      font-weight: 800;
+      text-decoration: none;
+      background: rgba(255, 255, 255, 0.14);
+      border-radius: 999px;
+      padding: 9px 15px;
+      display: inline-block;
+    }
+
+    footer {
+      margin-top: 18px;
+      border-top: 1px solid var(--line);
+      padding: 18px 0 30px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .foot {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .foot a { color: #33415f; text-decoration: none; font-weight: 700; }
+
+    @media (max-width: 900px) {
+      .grid { grid-template-columns: 1fr; }
+      .perm { grid-template-columns: 1fr; }
+      .nav-inner { flex-wrap: wrap; }
+      .nav-actions { width: 100%; justify-content: space-between; }
+    }
+  </style>
+</head>
+<body class="lang-en">
+  <nav class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="./index.html">
+        <img src="./images/icon.png" alt="EngLabs icon" />
+        <b>EngLabs</b>
+      </a>
+      <div class="nav-actions">
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button class="lang-en" type="button" onclick="setLang('en')">EN</button>
+          <button class="lang-vi" type="button" onclick="setLang('vi')">VI</button>
+        </div>
+        <a class="btn btn-ghost" href="./index.html">
+          <span class="en">Back to Home</span>
+          <span class="vi">Về trang chủ</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="wrap">
+    <header class="hero">
+      <span class="pill">
+        <span class="en">Privacy & data transparency</span>
+        <span class="vi">Minh bạch quyền riêng tư và dữ liệu</span>
+      </span>
+      <h1>
+        <span class="en">Privacy Policy</span>
+        <span class="vi">Chính sách quyền riêng tư</span>
+      </h1>
+      <p>
+        <span class="en">
+          This policy explains what data EngLabs processes, why we request specific Android permissions,
+          and how you can control or remove your data.
+        </span>
+        <span class="vi">
+          Chính sách này giải thích dữ liệu EngLabs xử lý, lý do ứng dụng yêu cầu các quyền Android,
+          và cách bạn kiểm soát hoặc xóa dữ liệu của mình.
+        </span>
+      </p>
+      <div class="meta">
+        <span class="en">Last updated: April 16, 2026</span>
+        <span class="vi">Cập nhật lần cuối: 16/04/2026</span>
+      </div>
+    </header>
+
+    <section class="grid">
+      <article class="mini">
+        <span class="en">No ads in learning or unlock flow</span>
+        <span class="vi">Không quảng cáo trong luồng học hoặc mở khóa</span>
+      </article>
+      <article class="mini">
+        <span class="en">Core progress is stored on your device</span>
+        <span class="vi">Tiến độ học cốt lõi được lưu trên thiết bị của bạn</span>
+      </article>
+      <article class="mini">
+        <span class="en">Permissions can be revoked in Android Settings</span>
+        <span class="vi">Bạn có thể thu hồi quyền trong Cài đặt Android</span>
+      </article>
+    </section>
+
+    <section class="section">
+      <h2>
+        <span class="en">1. Data we process</span>
+        <span class="vi">1. Dữ liệu chúng tôi xử lý</span>
+      </h2>
+      <ul>
+        <li>
+          <strong><span class="en">Account info</span><span class="vi">Thông tin tài khoản</span></strong> —
+          <span class="en">if you sign in with Google: email, display name, avatar.</span>
+          <span class="vi">nếu đăng nhập Google: email, tên hiển thị, ảnh đại diện.</span>
+        </li>
+        <li>
+          <strong><span class="en">Learning data</span><span class="vi">Dữ liệu học tập</span></strong> —
+          <span class="en">word progress, review history, streak, and study statistics.</span>
+          <span class="vi">tiến độ từ vựng, lịch sử ôn tập, streak, và thống kê học.</span>
+        </li>
+        <li>
+          <strong><span class="en">Focus mode app events</span><span class="vi">Sự kiện ứng dụng trong Focus mode</span></strong> —
+          <span class="en">foreground app detection to trigger unlock review. Processed on-device for runtime enforcement.</span>
+          <span class="vi">phát hiện ứng dụng foreground để kích hoạt ôn tập mở khóa. Xử lý trên thiết bị để thực thi runtime.</span>
+        </li>
+        <li>
+          <strong><span class="en">Purchase status</span><span class="vi">Trạng thái mua hàng</span></strong> —
+          <span class="en">subscription/entitlement information from Google Play + RevenueCat.</span>
+          <span class="vi">thông tin đăng ký/quyền lợi từ Google Play + RevenueCat.</span>
+        </li>
+        <li>
+          <strong><span class="en">Diagnostics</span><span class="vi">Chẩn đoán lỗi</span></strong> —
+          <span class="en">anonymous crash and technical logs from Firebase services.</span>
+          <span class="vi">log lỗi và dữ liệu kỹ thuật ẩn danh từ Firebase.</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>
+        <span class="en">2. Permissions we request</span>
+        <span class="vi">2. Các quyền ứng dụng yêu cầu</span>
+      </h2>
+      <p>
+        <span class="en">EngLabs only requests permissions required for app features you use.</span>
+        <span class="vi">EngLabs chỉ yêu cầu các quyền cần thiết cho tính năng bạn dùng.</span>
+      </p>
+      <div class="perm">
+        <article class="perm-item">
+          <b>
+            <span class="en">Usage Access</span>
+            <span class="vi">Quyền sử dụng (Usage Access)</span>
+          </b>
+          <p>
+            <span class="en">Detects foreground apps to run Focus Mode unlock checks.</span>
+            <span class="vi">Phát hiện app foreground để chạy kiểm tra mở khóa Focus Mode.</span>
+          </p>
+        </article>
+        <article class="perm-item">
+          <b>
+            <span class="en">Display over other apps (Overlay)</span>
+            <span class="vi">Hiển thị trên ứng dụng khác (Overlay)</span>
+          </b>
+          <p>
+            <span class="en">Shows the review overlay before blocked app access.</span>
+            <span class="vi">Hiển thị overlay ôn tập trước khi vào app bị chặn.</span>
+          </p>
+        </article>
+        <article class="perm-item">
+          <b>
+            <span class="en">Query installed apps</span>
+            <span class="vi">Xem danh sách app đã cài</span>
+          </b>
+          <p>
+            <span class="en">Lets you choose which apps to include in Focus Mode.</span>
+            <span class="vi">Giúp bạn chọn app nào áp dụng Focus Mode.</span>
+          </p>
+        </article>
+        <article class="perm-item">
+          <b>
+            <span class="en">Notifications</span>
+            <span class="vi">Thông báo</span>
+          </b>
+          <p>
+            <span class="en">Sends reminders and learning progress notifications.</span>
+            <span class="vi">Gửi nhắc nhở và thông báo tiến độ học.</span>
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>
+        <span class="en">3. Backup, sharing, and third parties</span>
+        <span class="vi">3. Sao lưu, chia sẻ và dịch vụ bên thứ ba</span>
+      </h2>
+      <h3>
+        <span class="en">Optional Google Drive backup</span>
+        <span class="vi">Sao lưu Google Drive (tùy chọn)</span>
+      </h3>
+      <p>
+        <span class="en">
+          If enabled, backup data is stored in your app-specific Google Drive folder. You can remove backup data from your Drive account.
+        </span>
+        <span class="vi">
+          Nếu bật, dữ liệu sao lưu được lưu trong thư mục Google Drive riêng của ứng dụng. Bạn có thể xóa dữ liệu sao lưu từ tài khoản Drive của mình.
+        </span>
+      </p>
+      <h3>
+        <span class="en">Third-party services</span>
+        <span class="vi">Dịch vụ bên thứ ba</span>
+      </h3>
+      <div class="refs">
+        <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">Google Firebase</a>
+        <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener noreferrer">RevenueCat</a>
+        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Play / Google Drive</a>
+      </div>
+      <p>
+        <span class="en">We do not sell your personal data.</span>
+        <span class="vi">Chúng tôi không bán dữ liệu cá nhân của bạn.</span>
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>
+        <span class="en">4. Data retention and your controls</span>
+        <span class="vi">4. Thời gian lưu dữ liệu và quyền kiểm soát của bạn</span>
+      </h2>
+      <ul>
+        <li>
+          <strong><span class="en">Delete local data</span><span class="vi">Xóa dữ liệu cục bộ</span></strong> —
+          <span class="en">clear app data or uninstall the app.</span>
+          <span class="vi">xóa dữ liệu ứng dụng hoặc gỡ cài đặt app.</span>
+        </li>
+        <li>
+          <strong><span class="en">Delete account</span><span class="vi">Xóa tài khoản</span></strong> —
+          <span class="en">remove account from app settings to delete Firebase auth profile.</span>
+          <span class="vi">xóa tài khoản trong phần cài đặt để xóa hồ sơ xác thực Firebase.</span>
+        </li>
+        <li>
+          <strong><span class="en">Revoke permissions</span><span class="vi">Thu hồi quyền</span></strong> —
+          <span class="en">disable Usage Access/Overlay/Notifications in Android Settings anytime.</span>
+          <span class="vi">tắt Usage Access/Overlay/Thông báo trong Cài đặt Android bất kỳ lúc nào.</span>
+        </li>
+        <li>
+          <strong><span class="en">Revoke Google access</span><span class="vi">Thu hồi truy cập Google</span></strong> —
+          <span class="en">manage app access at myaccount.google.com/permissions.</span>
+          <span class="vi">quản lý quyền truy cập app tại myaccount.google.com/permissions.</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>
+        <span class="en">5. Children and policy updates</span>
+        <span class="vi">5. Trẻ em và cập nhật chính sách</span>
+      </h2>
+      <p>
+        <span class="en">
+          EngLabs is not directed to children under 13. We may update this policy over time; when updated, the "Last updated" date will change.
+        </span>
+        <span class="vi">
+          EngLabs không hướng đến trẻ em dưới 13 tuổi. Chúng tôi có thể cập nhật chính sách theo thời gian; khi cập nhật, ngày "Cập nhật lần cuối" sẽ thay đổi.
+        </span>
+      </p>
+    </section>
+
+    <section class="contact">
+      <p>
+        <span class="en">Questions about privacy or data requests?</span>
+        <span class="vi">Bạn có thắc mắc về quyền riêng tư hoặc yêu cầu dữ liệu?</span>
+      </p>
+      <a href="mailto:drazyan.z3@gmail.com">drazyan.z3@gmail.com</a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap foot">
+      <div>© 2026 EngLabs</div>
+      <div style="display:flex;gap:14px;flex-wrap:wrap;">
+        <a href="./index.html">
+          <span class="en">Home</span>
+          <span class="vi">Trang chủ</span>
+        </a>
+        <a href="mailto:drazyan.z3@gmail.com">
+          <span class="en">Contact</span>
+          <span class="vi">Liên hệ</span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function setLang(lang) {
+      document.body.classList.remove("lang-en", "lang-vi");
+      document.body.classList.add(lang === "vi" ? "lang-vi" : "lang-en");
+      document.documentElement.setAttribute("lang", lang === "vi" ? "vi" : "en");
+      localStorage.setItem("englabs-site-lang", lang === "vi" ? "vi" : "en");
+    }
+
+    (function initLang() {
+      const saved = localStorage.getItem("englabs-site-lang");
+      if (saved === "vi" || saved === "en") {
+        setLang(saved);
+        return;
+      }
+      const browserLang = (navigator.language || "").toLowerCase();
+      setLang(browserLang.startsWith("vi") ? "vi" : "en");
+    })();
+  </script>
+</body>
+</html>
