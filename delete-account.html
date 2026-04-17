@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EngLabs Account Deletion</title>
+  <meta
+    name="description"
+    content="EngLabs account deletion instructions. Learn how to delete your account, what data is removed, and what data may need to be deleted separately."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    :root {
+      --bg: #f6f8ff;
+      --surface: #ffffff;
+      --surface-2: #ebefff;
+      --ink: #1e2433;
+      --muted: #5d667f;
+      --primary: #255fd6;
+      --primary-2: #5d89ff;
+      --mint: #15aa75;
+      --line: #dbe1f3;
+      --shadow: 0 14px 40px rgba(23, 42, 86, 0.1);
+      --radius: 18px;
+      --max: 960px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Manrope", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 15% -10%, rgba(93, 137, 255, 0.16), transparent 34%),
+        radial-gradient(circle at 85% 8%, rgba(21, 170, 117, 0.12), transparent 30%),
+        var(--bg);
+      line-height: 1.66;
+    }
+
+    .wrap { width: min(var(--max), calc(100% - 32px)); margin: 0 auto; }
+    .en, .vi { display: none; }
+    body.lang-en .en, body.lang-vi .vi { display: block; }
+    body.lang-en .lang-en, body.lang-vi .lang-vi { color: #fff; background: var(--primary); }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(10px);
+      background: rgba(246, 248, 255, 0.84);
+      border-bottom: 1px solid rgba(219, 225, 243, 0.7);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 0;
+      gap: 16px;
+    }
+    .brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink); }
+    .brand img { width: 36px; height: 36px; border-radius: 10px; }
+    .brand b { font-size: 18px; letter-spacing: -0.2px; }
+
+    .nav-actions { display: inline-flex; align-items: center; gap: 8px; }
+    .lang-switch {
+      display: inline-flex;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--surface);
+      padding: 3px;
+      gap: 2px;
+    }
+    .lang-switch button {
+      border: 0;
+      background: transparent;
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 12px;
+      border-radius: 999px;
+      padding: 6px 10px;
+      cursor: pointer;
+    }
+
+    .btn {
+      text-decoration: none;
+      border-radius: 999px;
+      font-weight: 800;
+      letter-spacing: 0.1px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 0;
+      cursor: pointer;
+      white-space: nowrap;
+      padding: 11px 16px;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--primary-2));
+      color: #fff;
+      box-shadow: var(--shadow);
+    }
+    .btn-ghost {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      color: var(--ink);
+    }
+
+    main { padding: 42px 0 56px; }
+    .hero {
+      background: linear-gradient(150deg, #fff, #eef3ff);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: clamp(20px, 3.6vw, 34px);
+      box-shadow: var(--shadow);
+      margin-bottom: 16px;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border-radius: 999px;
+      padding: 7px 12px;
+      background: rgba(37, 95, 214, 0.08);
+      color: var(--primary);
+      font-weight: 800;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 10px;
+    }
+    h1 {
+      font-family: "Fraunces", serif;
+      font-size: clamp(34px, 5vw, 54px);
+      line-height: 1.08;
+      letter-spacing: -0.8px;
+      margin-bottom: 12px;
+    }
+    .hero p { color: var(--muted); font-size: 17px; max-width: 70ch; }
+    .meta { margin-top: 14px; color: #36466d; font-weight: 700; font-size: 13px; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .mini {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 13px;
+      font-size: 14px;
+      color: #2b395c;
+      font-weight: 600;
+    }
+
+    .section {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 20px;
+      margin-bottom: 12px;
+    }
+    .section h2 {
+      font-family: "Fraunces", serif;
+      font-size: 30px;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+      margin-bottom: 10px;
+    }
+    .section h3 { font-size: 16px; margin: 14px 0 6px; }
+    .section p { color: var(--muted); margin-bottom: 8px; }
+    .section p:last-child { margin-bottom: 0; }
+
+    ul, ol {
+      display: grid;
+      gap: 8px;
+      margin: 8px 0;
+      color: var(--muted);
+    }
+    ul { list-style: none; }
+    ul li {
+      padding-left: 16px;
+      position: relative;
+    }
+    ul li::before {
+      content: "•";
+      color: var(--primary);
+      font-weight: 900;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+    ol { padding-left: 20px; }
+    strong { color: #223258; }
+
+    .callout {
+      background: var(--surface-2);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 14px;
+      margin-top: 10px;
+    }
+    .callout b {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 14px;
+    }
+    .callout p { margin: 0; font-size: 14px; }
+
+    .contact {
+      text-align: center;
+      background: linear-gradient(145deg, #20489f, #3f70e2);
+      color: #fff;
+      border-radius: 20px;
+      padding: 22px 18px;
+      box-shadow: var(--shadow);
+      margin-top: 14px;
+    }
+    .contact p { opacity: 0.94; margin-bottom: 10px; }
+    .contact a {
+      color: #fff;
+      font-weight: 800;
+      text-decoration: none;
+      background: rgba(255, 255, 255, 0.14);
+      border-radius: 999px;
+      padding: 9px 15px;
+      display: inline-block;
+    }
+
+    footer {
+      margin-top: 18px;
+      border-top: 1px solid var(--line);
+      padding: 18px 0 30px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .foot {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .foot a { color: #33415f; text-decoration: none; font-weight: 700; }
+
+    @media (max-width: 900px) {
+      .grid { grid-template-columns: 1fr; }
+      .nav-inner { flex-wrap: wrap; }
+      .nav-actions { width: 100%; justify-content: space-between; }
+    }
+  </style>
+</head>
+<body class="lang-en">
+  <nav class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="./index.html">
+        <img src="./icon.png" alt="EngLabs icon" />
+        <b>EngLabs</b>
+      </a>
+      <div class="nav-actions">
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button class="lang-en" type="button" onclick="setLang('en')">EN</button>
+          <button class="lang-vi" type="button" onclick="setLang('vi')">VI</button>
+        </div>
+        <a class="btn btn-ghost" href="./index.html">
+          <span class="en">Back to Home</span>
+          <span class="vi">Về trang chủ</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="wrap">
+    <header class="hero">
+      <span class="pill">
+        <span class="en">Account deletion & data removal</span>
+        <span class="vi">Xóa tài khoản và gỡ dữ liệu</span>
+      </span>
+      <h1>
+        <span class="en">Delete your EngLabs account</span>
+        <span class="vi">Xóa tài khoản EngLabs</span>
+      </h1>
+      <p>
+        <span class="en">
+          This page explains how to delete your EngLabs account, what data is removed with account deletion,
+          and what data may need to be deleted separately.
+        </span>
+        <span class="vi">
+          Trang này giải thích cách xóa tài khoản EngLabs, dữ liệu nào sẽ bị xóa cùng tài khoản,
+          và dữ liệu nào có thể cần xóa riêng.
+        </span>
+      </p>
+      <div class="meta">
+        <span class="en">Last updated: April 17, 2026</span>
+        <span class="vi">Cập nhật lần cuối: 17/04/2026</span>
+      </div>
+    </header>
+
+    <section class="grid">
+      <article class="mini">
+        <span class="en">Account deletion is available inside the app</span>
+        <span class="vi">Có thể xóa tài khoản trực tiếp trong ứng dụng</span>
+      </article>
+      <article class="mini">
+        <span class="en">Google sign-in access can also be revoked from your Google Account</span>
+        <span class="vi">Bạn cũng có thể thu hồi quyền đăng nhập Google từ Tài khoản Google</span>
+      </article>
+      <article class="mini">
+        <span class="en">Google Drive backups may need separate deletion</span>
+        <span class="vi">Bản sao lưu Google Drive có thể cần xóa riêng</span>
+      </article>
+    </section>
+
+    <section class="section">
+      <h2>
+        <span class="en">1. How to delete your account</span>
+        <span class="vi">1. Cách xóa tài khoản</span>
+      </h2>
+      <ol>
+        <li>
+          <span class="en">Open <strong>EngLabs</strong>.</span>
+          <span class="vi">Mở <strong>EngLabs</strong>.</span>
+        </li>
+        <li>
+          <span class="en">Go to <strong>Settings</strong>.</span>
+          <span class="vi">Vào mục <strong>Settings / Cài đặt</strong>.</span>
+        </li>
+        <li>
+          <span class="en">Choose <strong>Delete account</strong>.</span>
+          <span class="vi">Chọn <strong>Delete account / Xóa tài khoản</strong>.</span>
+        </li>
+        <li>
+          <span class="en">Confirm the action when prompted.</span>
+          <span class="vi">Xác nhận thao tác khi được hỏi lại.</span>
+        </li>
+      </ol>
+      <div class="callout">
+        <b>
+          <span class="en">Used Google Sign-In?</span>
+          <span class="vi">Bạn dùng đăng nhập Google?</span>
+        </b>
+        <p>
+          <span class="en">
+            You can additionally revoke EngLabs access from
+            <strong>myaccount.google.com/permissions</strong>.
+          </span>
+          <span class="vi">
+            Bạn cũng có thể thu hồi quyền truy cập của EngLabs tại
+            <strong>myaccount.google.com/permissions</strong>.
+          </span>
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>
+        <span class="en">2. What is deleted with account deletion</span>
+        <span class="vi">2. Dữ liệu bị xóa khi xóa tài khoản</span>
+      </h2>
+      <ul>
+        <li>
+          <strong><span class="en">Authentication profile</span><span class="vi">Hồ sơ xác thực</span></strong> —
+          <span class="en">your EngLabs sign-in account handled through Firebase Authentication is deleted.</span>
+          <span class="vi">tài khoản đăng nhập EngLabs được quản lý qua Firebase Authentication sẽ bị xóa.</span>
+        </li>
+        <li>
+          <strong><span class="en">Associated sign-in access</span><span class="vi">Quyền truy cập đăng nhập liên quan</span></strong> —
+          <span class="en">the app signs you out and clears the current sign-in session on the device.</span>
+          <span class="vi">ứng dụng sẽ đăng xuất và xóa phiên đăng nhập hiện tại trên thiết bị.</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>
+        <span class="en">3. Data that may need separate deletion</span>
+        <span class="vi">3. Dữ liệu có thể cần xóa riêng</span>
+      </h2>
+      <ul>
+        <li>
+          <strong><span class="en">Local learning data</span><span class="vi">Dữ liệu học cục bộ</span></strong> —
+          <span class="en">study progress, settings, and downloaded content stored on your device may remain until you clear app storage or uninstall the app.</span>
+          <span class="vi">tiến độ học, cài đặt và nội dung đã tải lưu trên thiết bị có thể còn lại cho đến khi bạn xóa dữ liệu ứng dụng hoặc gỡ cài đặt app.</span>
+        </li>
+        <li>
+          <strong><span class="en">Google Drive backups</span><span class="vi">Bản sao lưu Google Drive</span></strong> —
+          <span class="en">if you created backups, they may remain in your Google Drive app data area until you delete them from EngLabs backup settings or your Google account.</span>
+          <span class="vi">nếu bạn đã tạo bản sao lưu, chúng có thể vẫn còn trong vùng dữ liệu ứng dụng của Google Drive cho đến khi bạn xóa chúng trong phần sao lưu của EngLabs hoặc từ tài khoản Google.</span>
+        </li>
+        <li>
+          <strong><span class="en">Purchase records</span><span class="vi">Lịch sử mua hàng</span></strong> —
+          <span class="en">Google Play and payment providers may retain transaction records as required by their own policies and legal obligations.</span>
+          <span class="vi">Google Play và nhà cung cấp thanh toán có thể giữ lại bản ghi giao dịch theo chính sách riêng và nghĩa vụ pháp lý của họ.</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>
+        <span class="en">4. How to remove remaining data</span>
+        <span class="vi">4. Cách xóa phần dữ liệu còn lại</span>
+      </h2>
+      <h3>
+        <span class="en">To remove local data from your device</span>
+        <span class="vi">Để xóa dữ liệu cục bộ trên thiết bị</span>
+      </h3>
+      <p>
+        <span class="en">Go to Android Settings → Apps → EngLabs → Storage → Clear data, or uninstall the app.</span>
+        <span class="vi">Vào Cài đặt Android → Ứng dụng → EngLabs → Bộ nhớ → Xóa dữ liệu, hoặc gỡ cài đặt ứng dụng.</span>
+      </p>
+      <h3>
+        <span class="en">To remove Google Drive backups</span>
+        <span class="vi">Để xóa bản sao lưu Google Drive</span>
+      </h3>
+      <p>
+        <span class="en">Open EngLabs backup settings and delete backup files, or revoke Drive access from your Google Account.</span>
+        <span class="vi">Mở phần sao lưu trong EngLabs và xóa các file backup, hoặc thu hồi quyền Drive từ Tài khoản Google của bạn.</span>
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>
+        <span class="en">5. Need help?</span>
+        <span class="vi">5. Cần hỗ trợ?</span>
+      </h2>
+      <p>
+        <span class="en">If you need help deleting your account or removing remaining data, contact us and include the email used for sign-in if available.</span>
+        <span class="vi">Nếu bạn cần hỗ trợ xóa tài khoản hoặc gỡ phần dữ liệu còn lại, hãy liên hệ với chúng tôi và đính kèm email dùng để đăng nhập nếu có.</span>
+      </p>
+    </section>
+
+    <section class="contact">
+      <p>
+        <span class="en">Account deletion support</span>
+        <span class="vi">Hỗ trợ xóa tài khoản</span>
+      </p>
+      <a href="mailto:drazyan.z3@gmail.com">drazyan.z3@gmail.com</a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap foot">
+      <div>© 2026 EngLabs</div>
+      <div style="display:flex;gap:14px;flex-wrap:wrap;">
+        <a href="./index.html">
+          <span class="en">Home</span>
+          <span class="vi">Trang chủ</span>
+        </a>
+        <a href="./privacy.html">
+          <span class="en">Privacy Policy</span>
+          <span class="vi">Chính sách quyền riêng tư</span>
+        </a>
+        <a href="mailto:drazyan.z3@gmail.com">
+          <span class="en">Contact</span>
+          <span class="vi">Liên hệ</span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function setLang(lang) {
+      document.body.classList.remove("lang-en", "lang-vi");
+      document.body.classList.add(lang === "vi" ? "lang-vi" : "lang-en");
+      document.documentElement.setAttribute("lang", lang === "vi" ? "vi" : "en");
+      localStorage.setItem("englabs-site-lang", lang === "vi" ? "vi" : "en");
+    }
+
+    (function initLang() {
+      const saved = localStorage.getItem("englabs-site-lang");
+      if (saved === "vi" || saved === "en") {
+        setLang(saved);
+        return;
+      }
+      const browserLang = (navigator.language || "").toLowerCase();
+      setLang(browserLang.startsWith("vi") ? "vi" : "en");
+    })();
+  </script>
+</body>
+</html>
