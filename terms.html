@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EngLabs Terms of Service</title>
+  <meta name="description" content="EngLabs Terms of Service — rules for using the app, subscriptions, and user responsibilities." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #f6f8ff;
+      --surface: #ffffff;
+      --surface-2: #ebefff;
+      --ink: #1e2433;
+      --muted: #5d667f;
+      --primary: #255fd6;
+      --primary-2: #5d89ff;
+      --mint: #15aa75;
+      --line: #dbe1f3;
+      --shadow: 0 14px 40px rgba(23, 42, 86, 0.1);
+      --radius: 18px;
+      --max: 960px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Manrope", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 15% -10%, rgba(93, 137, 255, 0.16), transparent 34%),
+        radial-gradient(circle at 85% 8%, rgba(21, 170, 117, 0.12), transparent 30%),
+        var(--bg);
+      line-height: 1.66;
+    }
+    .wrap { width: min(var(--max), calc(100% - 32px)); margin: 0 auto; }
+    .en, .vi { display: none; }
+    body.lang-en .en, body.lang-vi .vi { display: block; }
+    body.lang-en .lang-en, body.lang-vi .lang-vi { color: #fff; background: var(--primary); }
+
+    .nav {
+      position: sticky; top: 0; z-index: 50;
+      backdrop-filter: blur(10px);
+      background: rgba(246, 248, 255, 0.84);
+      border-bottom: 1px solid rgba(219, 225, 243, 0.7);
+    }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 12px 0; gap: 16px;
+    }
+    .brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink); }
+    .brand img { width: 36px; height: 36px; border-radius: 10px; }
+    .brand b { font-size: 18px; letter-spacing: -0.2px; }
+    .nav-actions { display: inline-flex; align-items: center; gap: 8px; }
+    .lang-switch {
+      display: inline-flex; border: 1px solid var(--line); border-radius: 999px;
+      background: var(--surface); padding: 3px; gap: 2px;
+    }
+    .lang-switch button {
+      border: 0; background: transparent; color: var(--muted); font-weight: 700;
+      font-size: 12px; border-radius: 999px; padding: 6px 10px; cursor: pointer;
+    }
+    .btn {
+      text-decoration: none; border-radius: 999px; font-weight: 800; letter-spacing: 0.1px;
+      display: inline-flex; align-items: center; justify-content: center;
+      border: 0; cursor: pointer; white-space: nowrap; padding: 11px 16px;
+    }
+    .btn-ghost { background: var(--surface); border: 1px solid var(--line); color: var(--ink); }
+
+    main { padding: 42px 0 56px; }
+    .hero {
+      background: linear-gradient(150deg, #fff, #eef3ff);
+      border: 1px solid var(--line); border-radius: 24px;
+      padding: clamp(20px, 3.6vw, 34px); box-shadow: var(--shadow); margin-bottom: 16px;
+    }
+    .pill {
+      display: inline-flex; align-items: center; gap: 8px; border-radius: 999px;
+      padding: 7px 12px; background: rgba(37, 95, 214, 0.08); color: var(--primary);
+      font-weight: 800; font-size: 12px; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 10px;
+    }
+    h1 {
+      font-family: "Fraunces", serif; font-size: clamp(34px, 5vw, 54px);
+      line-height: 1.08; letter-spacing: -0.8px; margin-bottom: 12px;
+    }
+    .hero p { color: var(--muted); font-size: 17px; max-width: 70ch; }
+    .meta { margin-top: 14px; color: #36466d; font-weight: 700; font-size: 13px; }
+
+    .section {
+      background: var(--surface); border: 1px solid var(--line);
+      border-radius: var(--radius); padding: 20px; margin-bottom: 12px;
+    }
+    .section h2 {
+      font-family: "Fraunces", serif; font-size: 28px; line-height: 1.2;
+      letter-spacing: -0.5px; margin-bottom: 10px;
+    }
+    .section h3 { font-size: 16px; margin: 14px 0 6px; }
+    .section p { color: var(--muted); margin-bottom: 8px; }
+    .section p:last-child { margin-bottom: 0; }
+    ul { list-style: none; display: grid; gap: 8px; margin: 8px 0; }
+    li { color: var(--muted); padding-left: 16px; position: relative; }
+    li::before { content: "•"; color: var(--primary); font-weight: 900; position: absolute; left: 0; top: 0; }
+    strong { color: #223258; }
+    a { color: var(--primary); font-weight: 700; text-decoration: none; }
+
+    .contact {
+      text-align: center; background: linear-gradient(145deg, #20489f, #3f70e2);
+      color: #fff; border-radius: 20px; padding: 22px 18px; box-shadow: var(--shadow); margin-top: 14px;
+    }
+    .contact p { opacity: 0.94; margin-bottom: 10px; }
+    .contact a {
+      color: #fff; font-weight: 800; text-decoration: none;
+      background: rgba(255,255,255,0.14); border-radius: 999px; padding: 9px 15px; display: inline-block;
+    }
+    footer {
+      margin-top: 18px; border-top: 1px solid var(--line); padding: 18px 0 30px;
+      color: var(--muted); font-size: 14px;
+    }
+    .foot { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+    .foot-links { display: flex; gap: 16px; }
+    .foot-links a { color: var(--muted); font-weight: 600; text-decoration: none; }
+    .foot-links a:hover { color: var(--primary); }
+    @media (max-width: 600px) {
+      .foot { flex-direction: column; align-items: flex-start; }
+      .perm { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body class="lang-en">
+<nav class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="index.html">
+      <img src="icon.png" alt="EngLabs" />
+      <b>EngLabs</b>
+    </a>
+    <div class="nav-actions">
+      <div class="lang-switch">
+        <button class="lang-en" onclick="setLang('en')">EN</button>
+        <button class="lang-vi" onclick="setLang('vi')">VI</button>
+      </div>
+      <a class="btn btn-ghost" href="privacy.html">Privacy Policy</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <div class="wrap">
+
+    <!-- ─── HERO ─── -->
+    <div class="hero">
+      <div class="en">
+        <div class="pill">📋 Legal</div>
+        <h1>Terms of Service</h1>
+        <p>By using EngLabs you agree to these terms. Please read them carefully.</p>
+        <p class="meta">Effective date: April 18, 2025 &nbsp;·&nbsp; App: EngLabs – Learn English To Unlock</p>
+      </div>
+      <div class="vi">
+        <div class="pill">📋 Pháp lý</div>
+        <h1>Điều khoản dịch vụ</h1>
+        <p>Khi sử dụng EngLabs, bạn đồng ý với các điều khoản này. Vui lòng đọc kỹ trước khi sử dụng.</p>
+        <p class="meta">Có hiệu lực từ: 18 tháng 4, 2025 &nbsp;·&nbsp; Ứng dụng: EngLabs – Learn English To Unlock</p>
+      </div>
+    </div>
+
+    <!-- ─── 1. ACCEPTANCE ─── -->
+    <div class="section">
+      <div class="en">
+        <h2>1. Acceptance of Terms</h2>
+        <p>By downloading, installing, or using EngLabs ("the App"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree, do not use the App.</p>
+        <p>These Terms apply to all users, including free and paid (Pro) subscribers. We reserve the right to update these Terms at any time. Continued use after changes constitutes acceptance.</p>
+      </div>
+      <div class="vi">
+        <h2>1. Chấp nhận điều khoản</h2>
+        <p>Bằng cách tải xuống, cài đặt hoặc sử dụng EngLabs ("Ứng dụng"), bạn đồng ý bị ràng buộc bởi các Điều khoản dịch vụ này ("Điều khoản"). Nếu bạn không đồng ý, vui lòng không sử dụng Ứng dụng.</p>
+        <p>Các Điều khoản này áp dụng cho tất cả người dùng, bao gồm người dùng miễn phí và người dùng đã trả phí (Pro). Chúng tôi có quyền cập nhật Điều khoản bất kỳ lúc nào. Việc tiếp tục sử dụng sau khi có thay đổi đồng nghĩa với việc bạn chấp nhận.</p>
+      </div>
+    </div>
+
+    <!-- ─── 2. THE SERVICE ─── -->
+    <div class="section">
+      <div class="en">
+        <h2>2. What EngLabs Does</h2>
+        <p>EngLabs is a vocabulary learning app that uses spaced-repetition flashcards. It also includes an optional <strong>Focus Mode</strong> that can restrict access to selected apps on your device until you complete vocabulary reviews.</p>
+        <ul>
+          <li>Vocabulary learning is available for free with daily limits.</li>
+          <li>Focus Mode (app blocking) is an opt-in feature — you must enable it explicitly.</li>
+          <li>Pro subscribers get unlimited daily words, unlimited app blocking, and other premium features.</li>
+        </ul>
+      </div>
+      <div class="vi">
+        <h2>2. EngLabs cung cấp gì</h2>
+        <p>EngLabs là ứng dụng học từ vựng sử dụng flashcard theo phương pháp lặp lại có khoảng cách. Ứng dụng cũng có tính năng <strong>Focus Mode</strong> tùy chọn, cho phép chặn một số ứng dụng trên thiết bị của bạn cho đến khi bạn hoàn thành phần ôn tập từ vựng.</p>
+        <ul>
+          <li>Học từ vựng miễn phí với giới hạn từ mỗi ngày.</li>
+          <li>Focus Mode (chặn app) là tính năng tự chọn — bạn phải kích hoạt thủ công.</li>
+          <li>Người dùng Pro được học không giới hạn từ, chặn không giới hạn app và các tính năng cao cấp khác.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ─── 3. USER RESPONSIBILITIES ─── -->
+    <div class="section">
+      <div class="en">
+        <h2>3. User Responsibilities</h2>
+        <p>You agree to use the App only for lawful purposes. You must not:</p>
+        <ul>
+          <li>Attempt to reverse-engineer, decompile, or modify the App.</li>
+          <li>Use the App to harm, harass, or deceive others.</li>
+          <li>Circumvent or disable the Focus Mode blocking mechanism for purposes that violate applicable laws.</li>
+          <li>Create multiple accounts to abuse free-tier limits.</li>
+        </ul>
+        <p>You are responsible for maintaining the security of your account credentials and for all activity under your account.</p>
+      </div>
+      <div class="vi">
+        <h2>3. Trách nhiệm người dùng</h2>
+        <p>Bạn đồng ý chỉ sử dụng Ứng dụng cho các mục đích hợp pháp. Bạn không được:</p>
+        <ul>
+          <li>Cố gắng dịch ngược, dịch mã, hay sửa đổi Ứng dụng.</li>
+          <li>Sử dụng Ứng dụng để gây hại, quấy rối, hay lừa dối người khác.</li>
+          <li>Vô hiệu hóa cơ chế chặn của Focus Mode nhằm vi phạm pháp luật.</li>
+          <li>Tạo nhiều tài khoản để lạm dụng giới hạn gói miễn phí.</li>
+        </ul>
+        <p>Bạn chịu trách nhiệm bảo mật thông tin đăng nhập và mọi hoạt động dưới tài khoản của mình.</p>
+      </div>
+    </div>
+
+    <!-- ─── 4. SUBSCRIPTIONS & BILLING ─── -->
+    <div class="section">
+      <div class="en">
+        <h2>4. Subscriptions &amp; Billing</h2>
+        <h3>4.1 Pro Plans</h3>
+        <p>EngLabs Pro is available as a monthly subscription, annual subscription, or one-time lifetime purchase, managed through Google Play. Prices are shown in the app and may vary by region.</p>
+        <h3>4.2 Auto-Renewal</h3>
+        <p>Monthly and annual subscriptions automatically renew unless cancelled at least 24 hours before the end of the current billing period. You can manage or cancel your subscription in <strong>Google Play → Subscriptions</strong>.</p>
+        <h3>4.3 Refunds</h3>
+        <p>Refund requests are handled by Google Play according to their <a href="https://support.google.com/googleplay/answer/2479637" target="_blank">refund policy</a>. We do not process refunds directly.</p>
+        <h3>4.4 Free Tier Limits</h3>
+        <p>Free accounts may have limits on daily words learned, number of apps that can be blocked in Focus Mode, and access to certain features. These limits may change over time.</p>
+      </div>
+      <div class="vi">
+        <h2>4. Đăng ký &amp; Thanh toán</h2>
+        <h3>4.1 Gói Pro</h3>
+        <p>EngLabs Pro có sẵn dưới dạng đăng ký hàng tháng, hàng năm, hoặc mua trọn đời một lần, được quản lý qua Google Play. Giá hiển thị trong ứng dụng và có thể thay đổi theo khu vực.</p>
+        <h3>4.2 Tự động gia hạn</h3>
+        <p>Đăng ký hàng tháng và hàng năm tự động gia hạn trừ khi bị hủy ít nhất 24 giờ trước khi kết thúc chu kỳ thanh toán hiện tại. Bạn có thể quản lý hoặc hủy đăng ký tại <strong>Google Play → Đăng ký</strong>.</p>
+        <h3>4.3 Hoàn tiền</h3>
+        <p>Yêu cầu hoàn tiền được xử lý bởi Google Play theo <a href="https://support.google.com/googleplay/answer/2479637" target="_blank">chính sách hoàn tiền</a> của họ. Chúng tôi không xử lý hoàn tiền trực tiếp.</p>
+        <h3>4.4 Giới hạn gói miễn phí</h3>
+        <p>Tài khoản miễn phí có thể có giới hạn về số từ học mỗi ngày, số app có thể chặn trong Focus Mode và quyền truy cập một số tính năng. Các giới hạn này có thể thay đổi theo thời gian.</p>
+      </div>
+    </div>
+
+    <!-- ─── 5. INTELLECTUAL PROPERTY ─── -->
+    <div class="section">
+      <div class="en">
+        <h2>5. Intellectual Property</h2>
+        <p>The App and all its content — including vocabulary data, UI design, icons, and source code — are owned by the developer and protected by applicable copyright laws.</p>
+        <p>You are granted a limited, non-exclusive, non-transferable license to use the App for personal, non-commercial purposes. Nothing in these Terms transfers any ownership rights to you.</p>
+      </div>
+      <div class="vi">
+        <h2>5. Sở hữu trí tuệ</h2>
+        <p>Ứng dụng và toàn bộ nội dung — bao gồm dữ liệu từ vựng, thiết kế giao diện, biểu tượng và mã nguồn — thuộc sở hữu của nhà phát triển và được bảo vệ bởi luật bản quyền hiện hành.</p>
+        <p>Bạn được cấp giấy phép sử dụng có giới hạn, không độc quyền, không thể chuyển nhượng để sử dụng Ứng dụng cho mục đích cá nhân, phi thương mại. Không có điều khoản nào trong Điều khoản này chuyển nhượng bất kỳ quyền sở hữu nào cho bạn.</p>
+      </div>
+    </div>
+
+    <!-- ─── 6. DISCLAIMERS ─── -->
+    <div class="section">
+      <div class="en">
+        <h2>6. Disclaimers</h2>
+        <p>The App is provided <strong>"as is"</strong> without warranties of any kind. We do not guarantee uninterrupted service or that the App will be error-free.</p>
+        <p>Focus Mode uses Android's <strong>UsageStatsManager</strong> and overlay permissions to detect and overlay foreground apps. While we take care to maintain a safe-list of system-critical apps (phone, SMS, emergency services), <strong>you are responsible for configuring Focus Mode appropriately</strong>. Do not block apps you may need in an emergency.</p>
+        <p>Vocabulary content is provided for educational purposes. We do not guarantee completeness or accuracy of translations.</p>
+      </div>
+      <div class="vi">
+        <h2>6. Miễn trừ trách nhiệm</h2>
+        <p>Ứng dụng được cung cấp <strong>"nguyên trạng"</strong> mà không có bất kỳ bảo đảm nào. Chúng tôi không đảm bảo dịch vụ không bị gián đoạn hoặc không có lỗi.</p>
+        <p>Focus Mode sử dụng quyền <strong>UsageStatsManager</strong> và hiển thị chồng lên của Android để phát hiện và che phủ ứng dụng đang chạy. Mặc dù chúng tôi duy trì danh sách trắng cho các ứng dụng hệ thống quan trọng (điện thoại, tin nhắn, dịch vụ khẩn cấp), <strong>bạn chịu trách nhiệm cấu hình Focus Mode phù hợp</strong>. Không chặn các ứng dụng có thể cần trong trường hợp khẩn cấp.</p>
+        <p>Nội dung từ vựng được cung cấp cho mục đích giáo dục. Chúng tôi không đảm bảo tính đầy đủ hoặc chính xác của bản dịch.</p>
+      </div>
+    </div>
+
+    <!-- ─── 7. TERMINATION ─── -->
+    <div class="section">
+      <div class="en">
+        <h2>7. Termination</h2>
+        <p>You may stop using the App at any time. We reserve the right to terminate or suspend access if you violate these Terms.</p>
+        <p>Upon termination, your right to use the App ceases immediately. Sections relating to intellectual property, disclaimers, and limitation of liability survive termination.</p>
+      </div>
+      <div class="vi">
+        <h2>7. Chấm dứt</h2>
+        <p>Bạn có thể ngừng sử dụng Ứng dụng bất kỳ lúc nào. Chúng tôi có quyền chấm dứt hoặc tạm ngưng quyền truy cập nếu bạn vi phạm các Điều khoản này.</p>
+        <p>Khi chấm dứt, quyền sử dụng Ứng dụng của bạn lập tức chấm dứt. Các điều khoản liên quan đến sở hữu trí tuệ, miễn trừ trách nhiệm và giới hạn trách nhiệm vẫn có hiệu lực sau khi chấm dứt.</p>
+      </div>
+    </div>
+
+    <!-- ─── 8. GOVERNING LAW ─── -->
+    <div class="section">
+      <div class="en">
+        <h2>8. Governing Law</h2>
+        <p>These Terms are governed by the laws of Vietnam. Any disputes shall be resolved in the courts of Vietnam, unless applicable law requires otherwise.</p>
+      </div>
+      <div class="vi">
+        <h2>8. Luật áp dụng</h2>
+        <p>Các Điều khoản này được điều chỉnh bởi pháp luật Việt Nam. Mọi tranh chấp sẽ được giải quyết tại tòa án Việt Nam, trừ khi pháp luật hiện hành có quy định khác.</p>
+      </div>
+    </div>
+
+    <!-- ─── CONTACT ─── -->
+    <div class="contact">
+      <div class="en">
+        <p>Questions about these Terms?</p>
+        <a href="mailto:tdzard94@gmail.com">Contact Us →</a>
+      </div>
+      <div class="vi">
+        <p>Có câu hỏi về Điều khoản này?</p>
+        <a href="mailto:tdzard94@gmail.com">Liên hệ chúng tôi →</a>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <span>© 2025 EngLabs</span>
+      <div class="foot-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="delete-account.html">Delete Account</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function setLang(lang) {
+    document.body.className = 'lang-' + lang;
+    localStorage.setItem('englab-lang', lang);
+  }
+  (function () {
+    const saved = localStorage.getItem('englab-lang');
+    const browser = navigator.language.startsWith('vi') ? 'vi' : 'en';
+    setLang(saved || browser);
+  })();
+</script>
+</body>
+</html>
